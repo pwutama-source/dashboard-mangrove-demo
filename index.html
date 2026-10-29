@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peta Penanaman Mangrove KKP 2020–2023</title>
+<meta name="description" content="Peta 3D penanaman mangrove KKP 2020–2023. Klik provinsi untuk melihat titik lokasi penanaman.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="panggung" class="memuat">
+  <canvas id="kanvas" aria-hidden="true"></canvas>
+  <div id="label" aria-hidden="true"></div>
+
+  <!-- KIRI: judul, detail lokasi, ringkasan -->
+  <div class="kiri">
+    <div class="judul" id="judul"></div>
+    <div class="bawah-kiri">
+      <div class="kartu detail" id="detail" hidden></div>
+      <div class="kartu kpi" id="kpi"></div>
+    </div>
+  </div>
+
+  <!-- TENGAH ATAS: filter tahun -->
+  <div class="tengah-atas">
+    <div class="tahun" id="tahun" role="tablist" aria-label="Filter tahun"></div>
+  </div>
+
+  <!-- KANAN: top 5 / daftar lokasi -->
+  <div class="kanan">
+    <div class="kartu daftar" id="daftar"></div>
+    <div class="kartu legenda" id="legenda"></div>
+  </div>
+
+  <p class="sumber">Sumber: data penanaman mangrove KKP 2020–2023 (shapefile). Batas provinsi: Peta Dasar BAKOSURTANAL 1:250.000. Tinggi provinsi sebanding total jumlah bibit.</p>
+
+  <div id="balon" class="balon" hidden></div>
+  <p id="pesan" class="pesan">Memuat data…</p>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
+<script src="data/provinsi.js"></script>
+<script src="data/mangrove.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
