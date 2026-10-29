@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KKP Mangrove Planting Map 2020–2023</title>
+<meta name="description" content="3D map of KKP mangrove planting 2020–2023. Click a province to see the planting site locations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="panggung" class="memuat">
+  <canvas id="kanvas" aria-hidden="true"></canvas>
+  <div id="label" aria-hidden="true"></div>
+
+  <!-- LEFT: title, site details, summary -->
+  <div class="kiri">
+    <div class="judul" id="judul"></div>
+    <div class="bawah-kiri">
+      <div class="kartu detail" id="detail" hidden></div>
+      <div class="kartu kpi" id="kpi"></div>
+    </div>
+  </div>
+
+  <!-- TOP CENTER: year filter -->
+  <div class="tengah-atas">
+    <div class="tahun" id="tahun" role="tablist" aria-label="Filter by year"></div>
+  </div>
+
+  <!-- RIGHT: top 5 / site list -->
+  <div class="kanan">
+    <div class="kartu daftar" id="daftar"></div>
+    <div class="kartu legenda" id="legenda"></div>
+  </div>
+
+  <p class="sumber">Source: KKP mangrove planting data 2020–2023 (shapefile). Province boundaries: BAKOSURTANAL Base Map 1:250,000. Province height is proportional to total seedlings.</p>
+
+  <div id="balon" class="balon" hidden></div>
+  <p id="pesan" class="pesan">Loading data…</p>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
+<script src="data/provinsi.js"></script>
+<script src="data/mangrove.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
